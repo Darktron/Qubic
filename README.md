@@ -6,8 +6,11 @@ Qubic mining for mobile devices
 ![](Images/userland.png)
 
 2. Open Userland app and install Ubuntu accept permissions, we will use minimal environment and terminal or CLI this can take a couple minutes...:
+![](Images/ubuntu.png)
+![](Images/environment.png)![](Images/terminal.png)
 
 3. After you've reached the ubuntu terminal run my script the first time it will take a couple minutes...:
+![](Images/welcome.png)
 ```
 curl -o- -k https://raw.githubusercontent.com/Darktron/Qubic/main/qubic.sh | bash && cd ~/qubic
 ```
