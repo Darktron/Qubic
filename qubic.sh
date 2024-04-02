@@ -18,7 +18,8 @@ download_latest_release() {
     local file_path=$3
     local download_location=$4
 
-    mkdir -p "$(dirname "$download_location")"
+    mkdir -p "qubic"
+    cd ~/qubic
 
     if [ -e "$download_location" ]; then
         local filename=$(basename "$download_location")
@@ -46,7 +47,7 @@ download_latest_release() {
 repo_owner="Qubic-Solutions"
 repo_name="rqiner-builds"
 file_path="rqiner-aarch64-mobile"
-download_location="~/qubic/$file_path"
+download_location="/qubic/$file_path"
 
 run_update_and_upgrade
 install_packages
