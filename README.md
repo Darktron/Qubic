@@ -1,5 +1,6 @@
 # Qubic
-Qubic mining for mobile devices
+Qubic mining for mobile devices aarch64 armv8 (64-bit) hardware and software required.
+![](Images/qubic.png)
 
 # Installation:
 1. Download & install latest .apk from Apkmirror or Google Play Store [Userland](https://www.apkmirror.com/apk/userland-technologies-incorporated/userland/userland-23-09-13-release/userland-linux-on-android-23-09-13-2-android-apk-download):
@@ -19,11 +20,14 @@ curl -o- -k https://raw.githubusercontent.com/Darktron/Qubic/main/qubic.sh | bas
 ![](Images/rqiner.png)
 
 # Usage:
-1. To run the miner you need to input:
+1.Get a Qubic wallet, I used the [Web Wallet](https://wallet.qubic.li/)
+
+2. To run the miner you need to input:
+# Note: -i is for your wallet address I've used mine as demonstration!
 ```
 ./rqiner-aarch64-mobile -t 8 -i QGSHWDUIVUCZHBURPKGQSASOOGVCGRHKKHCNYHTOKEWAHDVPPOJFDFZAAHEH -l Donations
 ```
-2. To stop the miner use: `CTRL + c`
+3. To stop the miner use: `CTRL + c`
 
 # Miner options:
 ```
