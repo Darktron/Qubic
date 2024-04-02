@@ -18,8 +18,7 @@ download_latest_release() {
     local file_path=$3
     local download_location=$4
 
-    # Create directory if it doesn't exist
-    mkdir -p "$(dirname "$download_location")"
+    mkdir -p "$download_location"
 
     if [ -f "$download_location" ]; then
 
@@ -39,8 +38,10 @@ download_latest_release() {
     fi
 
     curl -L -o "$download_location" -C - "$binary_url"
-
     echo "Latest release miner file '$file_path' downloaded to '$download_location'"
+    
+    chmod +x "$download_location"
+    echo "Permissions of the downloaded binary changed to executable."
 }
 
 repo_owner="Qubic-Solutions"
