@@ -8,7 +8,7 @@ Qubic mining for mobile devices
 
 3. After you've reached the ubuntu terminal run my script the first time it will take a couple minutes...:
 ```
-curl -o- -k https://raw.githubusercontent.com/Darktron/Qubic/main/qubic.sh | bash
+curl -o- -k https://raw.githubusercontent.com/Darktron/Qubic/main/qubic.sh | bash && cd ~/qubic
 ```
 
 4. After script is done you should be in the directory `userland@localhost:~/qubic$` now you can verify if the miner file exists with `ls` command.
