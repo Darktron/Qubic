@@ -12,14 +12,16 @@ install_packages() {
     sudo apt-get install git nano jq wget -y
 }
 
+make_folder() {
+    mkdir -p ~/qubic
+    cd ~/qubic
+}
+
 download_latest_release() {
     local repo_owner=$1
     local repo_name=$2
     local file_path=$3
     local download_location=$4
-
-    mkdir -p ~/qubic
-    cd ~/qubic
 
     if [ -e "$download_location" ]; then
         local filename=$(basename "$download_location")
@@ -51,4 +53,5 @@ download_location="$HOME/qubic/$file_path"
 
 run_update_and_upgrade
 install_packages
+make_folder
 download_latest_release "$repo_owner" "$repo_name" "$file_path" "$download_location"
