@@ -1,7 +1,10 @@
 #!/bin/bash
 
 run_update_and_upgrade() {
+    echo "Running 'apt update'..."
     yes | sudo apt update
+
+    echo "Running 'apt upgrade'..."
     yes | sudo apt upgrade
 }
 
@@ -11,32 +14,35 @@ download_latest_release() {
     local file_path=$3
     local download_location=$4
 
-    mkdir -p "$download_location"
+    # Create directory if it doesn't exist
+    mkdir -p "$(dirname "$download_location")"
 
-    if [ -f "$download_location/$file_path" ]; then
-        local filename=$(basename "$download_location/$file_path")
-        mv "$download_location/$file_path" "$download_location/${filename}.old"
+    if [ -f "$download_location" ]; then
+
+        local filename=$(basename "$download_location")
+
+        mv "$download_location" "$(dirname "$download_location")/${filename}.old"
+        echo "Existing file '$filename' renamed to '${filename}.old'"
     fi
 
-    local release_info=$(curl -s "https://api.github.com/repos/${repo_owner}/${repo_name}/releases?per_page=1")
-    local asset_id=$(echo "$release_info" | jq -r ".assets[] | select(.name == \"$file_path\") | .id")
+    local release_info=$(curl -s "https://api.github.com/repos/${repo_owner}/${repo_name}/releases/latest")
 
-    if [ -z "$asset_id" ]; then
+    local binary_url=$(echo "$release_info" | jq -r ".assets[] | select(.name == \"$file_path\") | .browser_download_url")
+
+    if [ -z "$binary_url" ]; then
         echo "Binary file '$file_path' not found in the latest release"
         exit 1
     fi
 
-    local binary_url="https://api.github.com/repos/${repo_owner}/${repo_name}/releases/assets/${asset_id}"
+    curl -L -o "$download_location" -C - "$binary_url"
 
-    curl -L -o "$download_location/$file_path" -C - -H "Accept: application/octet-stream" "$binary_url"
-
-    echo "Latest release binary file '$file_path' downloaded to '$download_location'"
+    echo "Latest release miner file '$file_path' downloaded to '$download_location'"
 }
 
 repo_owner="Qubic-Solutions"
 repo_name="rqiner-builds"
 file_path="rqiner-aarch64-mobile"
-download_location="/qubic"
+download_location="~/qubic"
 
 run_update_and_upgrade
 download_latest_release "$repo_owner" "$repo_name" "$file_path" "$download_location"
