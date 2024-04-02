@@ -18,7 +18,7 @@ download_latest_release() {
         mv "$download_location/$file_path" "$download_location/${filename}.old"
     fi
 
-    local release_info=$(curl -s "https://api.github.com/repos/${repo_owner}/${repo_name}/releases/latest")
+    local release_info=$(curl -s "https://api.github.com/repos/${repo_owner}/${repo_name}/releases?per_page=1")
     local asset_id=$(echo "$release_info" | jq -r ".assets[] | select(.name == \"$file_path\") | .id")
 
     if [ -z "$asset_id" ]; then
