@@ -18,12 +18,10 @@ download_latest_release() {
     local file_path=$3
     local download_location=$4
 
-    mkdir -p "$download_location"
+    mkdir -p "$(dirname "$download_location")"
 
-    if [ -f "$download_location" ]; then
-
+    if [ -e "$download_location" ]; then
         local filename=$(basename "$download_location")
-
         mv "$download_location" "$(dirname "$download_location")/${filename}.old"
         echo "Existing file '$filename' renamed to '${filename}.old'"
     fi
@@ -39,7 +37,8 @@ download_latest_release() {
 
     curl -L -o "$download_location" -C - "$binary_url"
     echo "Latest release miner file '$file_path' downloaded to '$download_location'"
-    
+
+    # Change permissions of the downloaded binary
     chmod +x "$download_location"
     echo "Permissions of the downloaded binary changed to executable."
 }
@@ -47,9 +46,9 @@ download_latest_release() {
 repo_owner="Qubic-Solutions"
 repo_name="rqiner-builds"
 file_path="rqiner-aarch64-mobile"
-download_location="/qubic"
+download_location="/qubic/$file_path"
 
 run_update_and_upgrade
 install_packages
 download_latest_release "$repo_owner" "$repo_name" "$file_path" "$download_location"
-cd ~/qubic
+cd /qubic
