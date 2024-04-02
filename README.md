@@ -15,7 +15,8 @@ Qubic mining for mobile devices
 curl -o- -k https://raw.githubusercontent.com/Darktron/Qubic/main/qubic.sh | bash && cd ~/qubic
 ```
 
-4. After script is done you should be in the directory `userland@localhost:~/qubic$` now you can verify if the miner file exists with `ls` command.
+4. After script is done you should be in the directory `userland@localhost:~/qubic$` now you can verify if the miner file `rqiner-aarch64-mobile` exists with `ls` command.
+![](Images/rqiner.png)
 
 # Usage:
 1. To run the miner you need to input:
