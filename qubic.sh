@@ -18,7 +18,7 @@ download_latest_release() {
     local file_path=$3
     local download_location=$4
 
-    mkdir -p "qubic"
+    mkdir -p ~/qubic
     cd ~/qubic
 
     if [ -e "$download_location" ]; then
