@@ -23,7 +23,7 @@ curl -o- -k https://raw.githubusercontent.com/Darktron/Qubic/main/qubic.sh | bas
 1.Get a Qubic wallet, I used the [Web Wallet](https://wallet.qubic.li/)
 
 2. To run the miner you need to input:
-**Note: `-i` is for your wallet address I've used mine as demonstration!**
+-**Note: `-i` is for your wallet address I've used mine as demonstration!**
 ```
 ./rqiner-aarch64-mobile -t 8 -i QGSHWDUIVUCZHBURPKGQSASOOGVCGRHKKHCNYHTOKEWAHDVPPOJFDFZAAHEH -l Donations
 ```
