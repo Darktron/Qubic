@@ -40,7 +40,6 @@ download_latest_release() {
     curl -L -o "$download_location" -C - "$binary_url"
     echo "Latest release miner file '$file_path' downloaded to '$download_location'"
 
-    # Change permissions of the downloaded binary
     chmod +x "$download_location"
     echo "Permissions of the downloaded binary changed to executable."
 }
