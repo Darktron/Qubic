@@ -46,9 +46,9 @@ download_latest_release() {
 repo_owner="Qubic-Solutions"
 repo_name="rqiner-builds"
 file_path="rqiner-aarch64-mobile"
-download_location="/qubic/$file_path"
+download_location="$HOME/qubic/$file_path"
 
 run_update_and_upgrade
 install_packages
 download_latest_release "$repo_owner" "$repo_name" "$file_path" "$download_location"
-cd /qubic
+cd "$download_location"
