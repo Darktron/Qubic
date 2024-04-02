@@ -2,14 +2,14 @@
 
 run_update_and_upgrade() {
     echo "Running 'apt update'..."
-    sudo apt-get update -y
+    yes | sudo apt update
 
     echo "Running 'apt upgrade'..."
-    sudo apt-get upgrade -y
+    yes | sudo apt upgrade
 }
 
 install_packages() {
-    sudo apt-get install git nano jq wget -y
+    yes | sudo apt install git nano jq wget
 }
 
 make_folder() {
