@@ -54,4 +54,3 @@ run_update_and_upgrade
 install_packages
 make_folder
 download_latest_release "$repo_owner" "$repo_name" "$file_path" "$download_location"
-cd $HOME/qubic
