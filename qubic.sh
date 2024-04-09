@@ -40,7 +40,7 @@ download_latest_release() {
         echo "Existing miner file '$filename' renamed to '${filename}.old'"
     fi
 
-    local releases=$(curl -s "https://api.github.com/repos/${repo_owner}/${repo_name}/releases?per_page=5")
+    local releases=$(curl -s "https://api.github.com/repos/${repo_owner}/${repo_name}/releases?per_page=10")
     local binary_url=""
 
     for release in $(echo "$releases" | jq -r '.[] | @base64'); do
