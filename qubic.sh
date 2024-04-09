@@ -30,18 +30,15 @@ download_latest_release() {
 
     local release_info=$(curl -s "https://api.github.com/repos/${repo_owner}/${repo_name}/releases?per_page=5")
 
-    local latest_release=$(echo "$release_info" | jq -r '.[0].name')
-
-    local binary_url=$(echo "$release_info" | jq -r ".[] | select(.assets[] | .name == \"$file_path\") | .assets[] | .browser_download_url")
+    local binary_url=$(echo "$release_info" | jq -r ".[] | .assets[] | select(.name == \"$file_path\") | .browser_download_url")
 
     if [ -z "$binary_url" ]; then
         echo "Binary file '$file_path' not found in the last 5 releases"
         exit 1
     fi
 
-    curl -L -o "$download_location" "$binary_url"
-    echo "Latest release: $latest_release"
-    echo "Miner file '$file_path' downloaded to '$download_location'"
+    curl -L -o "$download_location" -C - "$binary_url"
+    echo "Latest release miner file '$file_path' downloaded to '$download_location'"
 
     chmod +x "$download_location"
     echo "Permissions of the downloaded binary changed to executable."
