@@ -39,7 +39,7 @@ download_latest_release() {
         exit 1
     fi
 
-    curl -L -o "$download_location" -C - "$binary_url"
+    curl -L -o "$download_location" "$binary_url"
     echo "Latest release: $latest_release"
     echo "Miner file '$file_path' downloaded to '$download_location'"
 
