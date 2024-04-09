@@ -31,6 +31,7 @@ download_latest_release() {
     local release_info=$(curl -s "https://api.github.com/repos/${repo_owner}/${repo_name}/releases?per_page=5")
 
     local binary_url=$(echo "$release_info" | jq -r ".[] | .assets[] | select(.name == \"$file_path\") | .browser_download_url")
+    echo "Binary URL: $binary_url"
 
     if [ -z "$binary_url" ]; then
         echo "Binary file '$file_path' not found in the last 5 releases"
