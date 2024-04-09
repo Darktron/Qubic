@@ -1,5 +1,15 @@
 #!/bin/bash
 
+termux_ubuntu() {
+    pkg install proot-distro -y
+    proot-distro install ubuntu
+    proot-distro login ubuntu
+}
+
+if [ -d "/data/data/com.termux" ]; then
+    termux_ubuntu
+fi
+
 run_update_and_upgrade() {
     echo "Running 'apt update'..."
     if [ -d "/data/data/com.termux" ]; then
