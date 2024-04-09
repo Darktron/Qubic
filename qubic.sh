@@ -34,6 +34,8 @@ download_latest_release() {
 
     local binary_url=$(echo "$release_info" | jq -r ".[] | select(.assets[] | .name == \"$file_path\") | .assets[] | .browser_download_url")
 
+    echo "Binary URL: $binary_url"
+
     if [ -z "$binary_url" ]; then
         echo "Binary file '$file_path' not found in the last 5 releases"
         exit 1
