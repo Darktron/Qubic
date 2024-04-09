@@ -2,14 +2,26 @@
 
 run_update_and_upgrade() {
     echo "Running 'apt update'..."
-    sudo apt update -y
+    if [ -d "/data/data/com.termux" ]; then
+        apt update -y
+    else
+        sudo apt update -y
+    fi
 
     echo "Running 'apt upgrade'..."
-    sudo apt upgrade -y
+    if [ -d "/data/data/com.termux" ]; then
+        apt upgrade -y
+    else
+        sudo apt upgrade -y
+    fi
 }
 
 install_packages() {
-    sudo apt install git jq wget -y
+    if [ -d "/data/data/com.termux" ]; then
+        apt install git jq wget -y
+    else
+        sudo apt install git jq wget -y
+    fi
 }
 
 make_folder() {
