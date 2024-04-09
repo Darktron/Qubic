@@ -28,13 +28,17 @@ download_latest_release() {
         echo "Existing miner file '$filename' renamed to '${filename}.old'"
     fi
 
-    local release_info=$(curl -s "https://api.github.com/repos/${repo_owner}/${repo_name}/releases?per_page=5")
+    local releases=$(curl -s "https://api.github.com/repos/${repo_owner}/${repo_name}/releases?per_page=5")
+    local binary_url=""
 
-    local release_name=$(echo "$release_info" | jq -r '.[0].name')
-
-    local binary_url=$(echo "$release_info" | jq -r ".[] | select(.assets[] | .name == \"$file_path\") | .assets[] | .browser_download_url")
-
-    echo "Binary URL: $binary_url"
+    for release in $(echo "$releases" | jq -r '.[] | @base64'); do
+        local release_info=$(echo "$release" | base64 --decode)
+        local release_name=$(echo "$release_info" | jq -r '.name')
+        binary_url=$(echo "$release_info" | jq -r ".assets[] | select(.name == \"$file_path\") | .browser_download_url")
+        if [ -n "$binary_url" ]; then
+            break
+        fi
+    done
 
     if [ -z "$binary_url" ]; then
         echo "Binary file '$file_path' not found in the last 5 releases"
