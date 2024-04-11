@@ -18,9 +18,9 @@ run_update_and_upgrade() {
 
 install_packages() {
     if [ -d "/data/data/com.termux" ]; then
-        apt install git jq wget -y
+        apt install git jq wget nano -y
     else
-        sudo apt install git jq wget -y
+        sudo apt install git jq wget nano -y
     fi
 }
 
