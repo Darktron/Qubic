@@ -23,13 +23,14 @@ curl -o- -k https://raw.githubusercontent.com/Darktron/Qubic/main/qubic.sh | bas
 1.Get a Qubic wallet, I used the [Qubic Web Wallet](https://wallet.qubic.li/)
 
 2. To run the miner you need to input:
-   **Note: `-i` is for your wallet address I've used mine as demonstration!**
+  **Note: `-i` is for your wallet address I've used mine as demonstration!**
 ```
 ~/qubic/rqiner-aarch64-mobile -t 8 -i QGSHWDUIVUCZHBURPKGQSASOOGVCGRHKKHCNYHTOKEWAHDVPPOJFDFZAAHEH -l Donations
 ```
 3. To stop the miner use: `CTRL + c`
 
-4. To view your worker at pool visit: [Qubic.Commando.sh](https://qubic.commando.sh/) then input your wallet address.
+4. To view your worker at pool visit: [Qubic.Commando.sh](https://qubic.commando.sh/) then input your wallet address and load stats.
+  Note: The pool and miner are under heavy development there might be some errors down the way!
 
 # Miner options:
 ```
