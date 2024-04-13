@@ -29,6 +29,8 @@ curl -o- -k https://raw.githubusercontent.com/Darktron/Qubic/main/qubic.sh | bas
 ```
 3. To stop the miner use: `CTRL + c`
 
+4. To view your worker at pool visit: [Qubic.Commando.sh](https://qubic.commando.sh/) then input your wallet address.
+
 # Miner options:
 ```
 Usage: rqiner [OPTIONS] --threads <THREADS>
@@ -41,3 +43,4 @@ Options:
   -h, --help               Print help
   -V, --version            Print version
 ```
+# All Credits to Qubic-Solutions community!
