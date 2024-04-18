@@ -3,7 +3,7 @@ Qubic mining for mobile devices aarch64 armv8 (64-bit) hardware and software req
 ![](Images/qubic.png)
 
 # Installation:
-1. Download & install latest .apk from Apkmirror or Google Play Store [Userland](https://www.apkmirror.com/apk/userland-technologies-incorporated/userland/userland-24-04-03-release/userland-linux-on-android-24-04-03-2-android-apk-download):
+1. Download & install latest .apk from Apkmirror or Google Play Store <a href="https://www.apkmirror.com/apk/userland-technologies-incorporated/userland/userland-24-04-03-release/userland-linux-on-android-24-04-03-2-android-apk-download" target="_blank">Userland</a>:
 ![](Images/userland.png)
 
 2. Open Userland app and install Ubuntu accept permissions, we will use minimal environment and terminal or CLI this can take a couple minutes...:
