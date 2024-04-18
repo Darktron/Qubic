@@ -3,14 +3,15 @@ Qubic mining for mobile devices aarch64 armv8 (64-bit) hardware and software req
 ![](Images/qubic.png)
 
 # Installation:
-1. Download & install latest .apk from Apkmirror or Google Play Store <a href="https://www.apkmirror.com/apk/userland-technologies-incorporated/userland/userland-24-04-03-release/userland-linux-on-android-24-04-03-2-android-apk-download" target="_blank">Userland</a>:
+1. Download & install latest .apk from Apkmirror or Google Play Store
+<a href="https://www.apkmirror.com/apk/userland-technologies-incorporated/userland/userland-24-04-03-release/userland-linux-on-android-24-04-03-2-android-apk-download" target="_blank" rel="noopener noreferrer">Userland</a>
 ![](Images/userland.png)
 
-2. Open Userland app and install Ubuntu accept permissions, we will use minimal environment and terminal or CLI this can take a couple minutes...:
+3. Open Userland app and install Ubuntu accept permissions, we will use minimal environment and terminal or CLI this can take a couple minutes...:
 ![](Images/ubuntu.png)
 ![](Images/environment.png)![](Images/terminal.png)
 
-3. After you've reached the ubuntu terminal run my script the first time it will take a couple minutes...:
+4. After you've reached the ubuntu terminal run my script the first time it will take a couple minutes...:
 ![](Images/welcome.png)
 ```
 curl -o- -k https://raw.githubusercontent.com/Darktron/Qubic/main/qubic.sh | bash && cd ~/qubic
