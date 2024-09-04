@@ -17,7 +17,7 @@ Qubic mining for mobile devices aarch64 armv8 (64-bit) hardware and software req
 curl -o- -k https://raw.githubusercontent.com/Darktron/Qubic/main/qubic.sh | bash && cd ~/qubic
 ```
 
-4. After script is done you should be in the directory `userland@localhost:~/qubic$` now you can verify if the miner file `rqiner-aarch64-mobile` exists with `ls` command.
+4. After script is done you should be in the directory `userland@localhost:~/qubic$` now you can verify if the miner file `rqiner-aarch64` exists with `ls` command.
 ![](Images/rqiner.png)
 
 # Usage:
@@ -26,7 +26,7 @@ curl -o- -k https://raw.githubusercontent.com/Darktron/Qubic/main/qubic.sh | bas
 2. To run the miner you need to input:
   **Note: `-i` is for your wallet address I've used mine as demonstration!**
 ```
-~/qubic/rqiner-aarch64-mobile -t 8 -i QGSHWDUIVUCZHBURPKGQSASOOGVCGRHKKHCNYHTOKEWAHDVPPOJFDFZAAHEH -l Donations
+~/qubic/rqiner-aarch64 -t 8 -i QGSHWDUIVUCZHBURPKGQSASOOGVCGRHKKHCNYHTOKEWAHDVPPOJFDFZAAHEH -l Donations
 ```
 3. To stop the miner use: `CTRL + c`
 
@@ -35,14 +35,16 @@ curl -o- -k https://raw.githubusercontent.com/Darktron/Qubic/main/qubic.sh | bas
 
 # Miner options:
 ```
-Usage: rqiner [OPTIONS] --threads <THREADS>
+Usage: rqiner-aarch64 [OPTIONS] --threads <THREADS> --id <ID> --label <LABEL>
 
 Options:
-  -t, --threads <THREADS>  Amount of threads used for mining
-  -b, --bench              Benchmarks your miner without submitting solutions
-  -i, --id <ID>            Your payout Qubic ID (required for pool mining)
-  -l, --label <LABEL>      Label used for identification of your miner on the pool
-  -h, --help               Print help
-  -V, --version            Print version
+  -t, --threads <THREADS>            Amount of threads used for mining
+  -i, --id <ID>                      Your payout Qubic ID (required for pool mining)
+  -x, --extended-reporting           Report it/s from individual threads
+  -l, --label <LABEL>                Label used for identification of your miner on the pool
+      --no-pplns                     Opt-out of PPLNS mode
+  -c, --idle-command <IDLE_COMMAND>  (Optional) Command will be run once during idle periods and killed on mining periods
+  -h, --help                         Print help
+  -V, --version                      Print version
 ```
 # All Credits to Qubic-Solutions community!
