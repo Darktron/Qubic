@@ -46,6 +46,7 @@ download_latest_release() {
     for release in $(echo "$releases" | jq -r '.[] | @base64'); do
         local release_info=$(echo "$release" | base64 --decode)
         local release_name=$(echo "$release_info" | jq -r '.name')
+        local release_tag=$(echo "$release_info" | jq -r '.tag_name')
         binary_url=$(echo "$release_info" | jq -r ".assets[] | select(.name == \"$file_path\") | .browser_download_url")
         if [ -n "$binary_url" ]; then
             break
@@ -59,6 +60,7 @@ download_latest_release() {
 
     curl -L -o "$download_location" "$binary_url"
     echo "Release: $release_name"
+    echo "Release Tag: $release_tag"
     echo "Miner file '$file_path' downloaded to '$download_location'"
 
     chmod +x "$download_location"
