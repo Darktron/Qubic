@@ -35,6 +35,8 @@ curl -o- -k https://raw.githubusercontent.com/Darktron/Qubic/main/qubic.sh | bas
 
 # Miner options:
 ```
+High performance Qubic CPU miner powered by Rust
+
 Usage: rqiner-aarch64 [OPTIONS] --threads <THREADS> --id <ID> --label <LABEL>
 
 Options:
@@ -43,6 +45,7 @@ Options:
   -x, --extended-reporting           Report it/s from individual threads
   -l, --label <LABEL>                Label used for identification of your miner on the pool
       --no-pplns                     Opt-out of PPLNS mode
+      --enable-hugepages             Enable hugepages for algo data storage
   -c, --idle-command <IDLE_COMMAND>  (Optional) Command will be run once during idle periods and killed on mining periods
   -h, --help                         Print help
   -V, --version                      Print version
