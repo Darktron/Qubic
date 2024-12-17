@@ -21,7 +21,7 @@ curl -o- -k https://raw.githubusercontent.com/Darktron/Qubic/main/qubic.sh | bas
 ![](Images/rqiner.png)
 
 # Usage:
-1.Get a Qubic wallet, I used the [Qubic Web Wallet](https://wallet.qubic.li/)
+1.Get a Qubic wallet, I used the [Qubic Web Wallet](https://wallet.qubic.org/)
 
 2. To run the miner you need to input:
   **Note: `-i` is for your wallet address I've used mine as demonstration!**
