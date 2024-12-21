@@ -2,7 +2,7 @@
 Qubic mining for mobile devices aarch64 armv8 (64-bit) hardware and software required.
 ![](Images/qubic.png)
 
-# Installation:
+# Installation (Now working Natively in Termux):
 1. Download & install latest .apk from Apkmirror or Google Play Store
 [Userland](https://www.apkmirror.com/apk/userland-technologies-incorporated/userland/userland-24-04-03-release/userland-linux-on-android-24-04-03-2-android-apk-download):
 ![](Images/userland.png)
@@ -26,7 +26,7 @@ curl -o- -k https://raw.githubusercontent.com/Darktron/Qubic/main/qubic.sh | bas
 2. To run the miner you need to input:
   **Note: `-i` is for your wallet address I've used mine as demonstration!**
 ```
-~/qubic/rqiner-aarch64 -t 8 -i QGSHWDUIVUCZHBURPKGQSASOOGVCGRHKKHCNYHTOKEWAHDVPPOJFDFZAAHEH -l Donations
+~/qubic/rqiner-aarch64* -t 8 -i QGSHWDUIVUCZHBURPKGQSASOOGVCGRHKKHCNYHTOKEWAHDVPPOJFDFZAAHEH -l Donations
 ```
 3. To stop the miner use: `CTRL + c`
 
@@ -37,7 +37,7 @@ curl -o- -k https://raw.githubusercontent.com/Darktron/Qubic/main/qubic.sh | bas
 ```
 High performance Qubic CPU miner powered by Rust
 
-Usage: rqiner-aarch64 [OPTIONS] --threads <THREADS> --id <ID> --label <LABEL>
+Usage: rqiner-aarch64-android [OPTIONS] --threads <THREADS> --id <ID> --label <LABEL>
 
 Options:
   -t, --threads <THREADS>            Amount of threads used for mining
