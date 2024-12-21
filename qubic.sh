@@ -3,14 +3,14 @@
 run_update_and_upgrade() {
     echo "Running 'apt update'..."
     if [ -d "/data/data/com.termux" ]; then
-        apt update -y
+        yes | pkg update -y
     else
         sudo apt update -y
     fi
 
     echo "Running 'apt upgrade'..."
     if [ -d "/data/data/com.termux" ]; then
-        apt upgrade -y
+        yes | pkg upgrade -y
     else
         sudo apt upgrade -y
     fi
@@ -18,7 +18,7 @@ run_update_and_upgrade() {
 
 install_packages() {
     if [ -d "/data/data/com.termux" ]; then
-        apt install git jq wget nano -y
+        yes | pkg install git jq wget nano -y
     else
         sudo apt install git jq wget nano -y
     fi
@@ -69,7 +69,11 @@ download_latest_release() {
 
 repo_owner="Qubic-Solutions"
 repo_name="rqiner-builds"
-file_path="rqiner-aarch64"
+if [ -d "/data/data/com.termux" ]; then
+    file_path="rqiner-aarch64-android"
+else
+    file_path="rqiner-aarch64"
+fi
 download_location="$HOME/qubic/$file_path"
 
 run_update_and_upgrade
