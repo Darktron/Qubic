@@ -1,7 +1,7 @@
 #!/bin/bash
 
 run_update_and_upgrade() {
-    echo "Running 'pkg update'..."
+    echo "RUNNING PKG UPDATE..."
     if [ -d "/data/data/com.termux" ]; then
         yes | pkg update -y
     else
@@ -9,7 +9,7 @@ run_update_and_upgrade() {
         sudo apt update -y
     fi
 
-    echo "Running 'pkg upgrade'..."
+    echo "RUNNING PKG UPGRADE..."
     if [ -d "/data/data/com.termux" ]; then
         yes | pkg upgrade -y
     else
@@ -19,7 +19,7 @@ run_update_and_upgrade() {
 }
 
 install_packages() {
-    echo "Installing dependencies ..."
+    echo "INSTALLING DEPENDENCIES..."
     if [ -d "/data/data/com.termux" ]; then
         yes | pkg install git jq wget nano -y
     else
@@ -32,6 +32,7 @@ make_folder() {
 }
 
 download_latest_release() {
+    echo "DOWNLOADING LATEST RQINER..."
     local repo_owner=$1
     local repo_name=$2
     local file_path=$3
