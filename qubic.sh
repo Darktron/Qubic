@@ -39,8 +39,8 @@ download_latest_release() {
 
     if [ -e "$download_location" ]; then
         local filename=$(basename "$download_location")
-        mv "$download_location" "$(dirname "$download_location")/${filename}.old"
-        echo "Existing miner file '$filename' renamed to '${filename}.old'"
+        mv "$download_location" "$(dirname "$download_location")/old.${filename}"
+        echo "Existing miner file '$filename' renamed to 'old.${filename}'"
     fi
 
     local releases=$(curl -s "https://api.github.com/repos/${repo_owner}/${repo_name}/releases?per_page=10")
