@@ -1,22 +1,25 @@
 #!/bin/bash
 
 run_update_and_upgrade() {
-    echo "Running 'apt update'..."
+    echo "Running 'pkg update'..."
     if [ -d "/data/data/com.termux" ]; then
         yes | pkg update -y
     else
+    echo "Running 'apt update'..."
         sudo apt update -y
     fi
 
-    echo "Running 'apt upgrade'..."
+    echo "Running 'pkg upgrade'..."
     if [ -d "/data/data/com.termux" ]; then
         yes | pkg upgrade -y
     else
+    echo "Running 'apt upgrade'..."
         sudo apt upgrade -y
     fi
 }
 
 install_packages() {
+    echo "Installing dependencies ..."
     if [ -d "/data/data/com.termux" ]; then
         yes | pkg install git jq wget nano -y
     else
