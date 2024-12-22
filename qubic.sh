@@ -13,16 +13,16 @@ echo "####################
 ####################"
 
 run_update_and_upgrade() {
-    echo "RUNNING PKG UPDATE..."
     if [ -d "/data/data/com.termux" ]; then
+    echo "RUNNING PKG UPDATE..."
         yes | pkg update -y
     else
     echo "RUNNING APT UPDATE..."
         sudo apt update -y
     fi
 
-    echo "RUNNING PKG UPGRADE..."
     if [ -d "/data/data/com.termux" ]; then
+    echo "RUNNING PKG UPGRADE..."
         yes | pkg upgrade -y
     else
     echo "RUNNING APT UPGRADE..."
