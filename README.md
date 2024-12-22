@@ -1,6 +1,10 @@
 # Qubic
-Qubic mining for mobile devices aarch64 armv8 (64-bit) hardware and software required.
+Qubic mining for mobile devices & single board computers aarch64 armv8 (64-bit) hardware and software required.
 ![](Images/qubic.png)
+
+# Tested on:
+- Samsung Galaxy S23 Ultra: Via Termux v0.119.0-beta-1, also via Userland v24.11.27 (Ubuntu)
+- Raspberry Pi 5: Via Raspberry Pi OS Lite (Debian 12 Bookworm)
 
 # Installation (Now working Natively in Termux):
 1. Download & install latest .apk from Apkmirror or Google Play Store
