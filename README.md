@@ -41,6 +41,8 @@ curl -o- -k https://raw.githubusercontent.com/Darktron/Qubic/main/qubic.sh | bas
 ```
 High performance Qubic CPU miner powered by Rust
 
+Usage: rqiner-aarch64 [OPTIONS] --threads <THREADS> --id <ID> --label <LABEL>
+or
 Usage: rqiner-aarch64-android [OPTIONS] --threads <THREADS> --id <ID> --label <LABEL>
 
 Options:
