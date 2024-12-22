@@ -3,6 +3,7 @@ Qubic mining for mobile devices & single board computers aarch64 armv8 (64-bit) 
 ![](Images/qubic.png)
 
 # Tested on:
+- Samsung Galaxy Book4 Edge (X1E-84-100): Via Windows 11 WSL2 (Ubuntu)
 - Samsung Galaxy S23 Ultra: Via Termux v0.119.0-beta-1, also via Userland v24.11.27 (Ubuntu)
 - Raspberry Pi 5: Via Raspberry Pi OS Lite (Debian 12 Bookworm)
 
