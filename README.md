@@ -1,4 +1,4 @@
-# Qubic
+# Qubic (Unavailable/Outdated)
 Qubic mining for mobile devices & single board computers aarch64 armv8 (64-bit) hardware and software required.
 ![](Images/qubic.png)
 
